@@ -1,0 +1,26 @@
+<!doctype html>
+%html
+  %head
+    %title Getting Started Extension's Popup
+    %link{:href => 'css/bootstrap.min.css', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'css/font-awesome.min.css', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'css/style.css', :rel => 'stylesheet', :type => 'text/css'}/
+  .url-info-input
+    .input-group
+      %span.input-group-addon
+        %i.icon-link
+      %input#current-url.form-control{:type => 'text'}/
+    .input-group
+      %span.input-group-addon
+        %i.icon-globe
+      %input#url-source.form-control{:placeholder => 'Source', :type => 'text'}/
+    .input-group
+      %span.input-group-addon
+        %i.icon-bullhorn
+      %input#url-campaign.form-control{:placeholder => 'Campaign', :type => 'text'}/
+  #short-url
+  %button#shorten-url.btn.btn-primary{:type => 'button'} Shorten URL
+
+  %script{:src => 'js/jquery.js'}
+  %script{:src => 'js/popup.js'}
+  %body

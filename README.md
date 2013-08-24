@@ -1,4 +1,0 @@
-optify
-======
-
-Optify browser extension
