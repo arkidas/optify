@@ -26,10 +26,10 @@ $("#shorten-url").click (e) ->
   urlSource = $("#url-source").val()
   urlCampaign = $("#url-campaign").val()
   unless isValid(urlSource)
-    alert "Source invalid!"
+    console.log "Source invalid!"
     return false
   else unless isValid(urlCampaign)
-    alert "Campaign invalid!"
+    console.log "Campaign invalid!"
     return false
   fullUrl = originalUrl + "/?optify_r=" + urlSource + "&optify_rd=" + urlCampaign
   fullUrl = fullUrl.replace(" ", "-")

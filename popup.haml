@@ -1,4 +1,4 @@
-<!doctype html>
+!!!
 %html
   %head
     %title Getting Started Extension's Popup
@@ -19,7 +19,10 @@
         %i.icon-bullhorn
       %input#url-campaign.form-control{:placeholder => 'Campaign', :type => 'text'}/
   #short-url
-  %button#shorten-url.btn.btn-primary{:type => 'button'} Shorten URL
+  .bottom-area
+    %button#shorten-url.btn.btn-primary{:type => 'button'} Shorten URL
+    .alert.alert-danger
+      Error thing man
 
   %script{:src => 'js/jquery.js'}
   %script{:src => 'js/popup.js'}
