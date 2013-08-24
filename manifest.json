@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://api.bit.ly; object-src 'self'",
+
+  "name": "Create and Opt.fy",
+  "description": "Shorten an URL as Optify",
+  "version": "0.2",
+
+  "permissions": [ "http://*/*", "https://*/*", "tabs", "notifications",
+  "contextMenus", "unlimitedStorage", "clipboardWrite" ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
