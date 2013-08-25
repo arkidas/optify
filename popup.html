@@ -2,35 +2,37 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
-    <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
     <link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href='css/style.css' rel='stylesheet' type='text/css'>
   </head>
   <div class='url-info-input'>
-    <div class='input-group'>
+    <div class='input-group url-current'>
       <span class='input-group-addon'>
         <i class='icon-link'></i>
       </span>
       <input class='form-control' id='current-url' type='text'>
     </div>
-    <div class='input-group'>
+    <div class='input-group url-source'>
       <span class='input-group-addon'>
         <i class='icon-globe'></i>
       </span>
       <input class='form-control' id='url-source' placeholder='Source' type='text'>
     </div>
-    <div class='input-group'>
+    <div class='input-group url-campaign'>
       <span class='input-group-addon'>
         <i class='icon-bullhorn'></i>
       </span>
       <input class='form-control' id='url-campaign' placeholder='Campaign' type='text'>
     </div>
   </div>
-  <div id='short-url'></div>
   <div class='bottom-area'>
-    <button class='btn btn-primary' id='shorten-url' type='button'>Shorten URL</button>
-    <div class='alert alert-danger'>
-      Error thing man
+    <button class='btn btn-primary btn-lg btn-block' id='shorten-url' type='button'>Shorten URL</button>
+    <div id='short-url'>
+      <input class='form-control' readonly='' type='text'>
+    </div>
+    <div class='loading'>
+      <i class='icon-spinner icon-spin icon-large'></i>
     </div>
   </div>
   <script src='js/jquery.js'></script>

@@ -12,6 +12,14 @@ input {
   font-size: 18px;
 }
 
+.url-info-input {
+  input {
+    &[disabled] {
+      cursor: auto;
+    }
+  }
+}
+
 div.url-info-input > div + div {
   margin-top: 20px;
 }
@@ -26,23 +34,44 @@ input:last-child {
   display: inline-block;
 }
 
-a {
-  position: relative;
-  top: 10px;
-  font-family: Arial;
-  font-weight: bold;
-  text-decoration: none;
-}
-
 .bottom-area {
   margin: 20px 0 0px;
-  overflow: hidden;
+  zoom: 1;
 
-  .alert.alert-danger {
-    float: right;
-    display: inline-block;
-    height: 34px;
-    padding: 5px;
-    margin-bottom: 0;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  #short-url {
+    display: none;
+    height: 45px;
+    zoom: 1;
+
+    input {
+      cursor: auto;
+    }
+
+    &:before, &:after {
+      content: '';
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+
+  .loading {
+    display: none;
+    text-align: center;
+    .icon-spinner.icon-spin.icon-large{
+      font-size: 34px;
+      color: #438bc9;
+    }
   }
 }

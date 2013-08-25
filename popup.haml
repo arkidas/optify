@@ -2,27 +2,29 @@
 %html
   %head
     %title Getting Started Extension's Popup
-    %link{:href => 'css/bootstrap.min.css', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'css/bootstrap.css', :rel => 'stylesheet', :type => 'text/css'}/
     %link{:href => 'css/font-awesome.min.css', :rel => 'stylesheet', :type => 'text/css'}/
     %link{:href => 'css/style.css', :rel => 'stylesheet', :type => 'text/css'}/
   .url-info-input
-    .input-group
+    .input-group.url-current
       %span.input-group-addon
         %i.icon-link
       %input#current-url.form-control{:type => 'text'}/
-    .input-group
+    .input-group.url-source
       %span.input-group-addon
         %i.icon-globe
       %input#url-source.form-control{:placeholder => 'Source', :type => 'text'}/
-    .input-group
+    .input-group.url-campaign
       %span.input-group-addon
         %i.icon-bullhorn
       %input#url-campaign.form-control{:placeholder => 'Campaign', :type => 'text'}/
-  #short-url
   .bottom-area
-    %button#shorten-url.btn.btn-primary{:type => 'button'} Shorten URL
-    .alert.alert-danger
-      Error thing man
+    %button#shorten-url.btn.btn-primary.btn-lg.btn-block{:type => 'button'} Shorten URL
+
+    #short-url
+      %input.form-control{:type => 'text', :readonly => ''}
+    .loading
+      %i.icon-spinner.icon-spin.icon-large
 
   %script{:src => 'js/jquery.js'}
   %script{:src => 'js/popup.js'}

@@ -10,6 +10,9 @@ input {
   padding-left: 10px;
   font-size: 18px;
 }
+.url-info-input input[disabled] {
+  cursor: auto;
+}
 div.url-info-input > div + div {
   margin-top: 20px;
 }
@@ -21,21 +24,39 @@ input:last-child {
   float: left;
   display: inline-block;
 }
-a {
-  position: relative;
-  top: 10px;
-  font-family: Arial;
-  font-weight: bold;
-  text-decoration: none;
-}
 .bottom-area {
   margin: 20px 0 0px;
-  overflow: hidden;
+  zoom: 1;
 }
-.bottom-area .alert.alert-danger {
-  float: right;
-  display: inline-block;
-  height: 34px;
-  padding: 5px;
-  margin-bottom: 0;
+.bottom-area:before,
+.bottom-area:after {
+  content: '';
+  display: table;
+}
+.bottom-area:after {
+  clear: both;
+}
+.bottom-area #short-url {
+  display: none;
+  height: 45px;
+  zoom: 1;
+}
+.bottom-area #short-url input {
+  cursor: auto;
+}
+.bottom-area #short-url:before,
+.bottom-area #short-url:after {
+  content: '';
+  display: table;
+}
+.bottom-area #short-url:after {
+  clear: both;
+}
+.bottom-area .loading {
+  display: none;
+  text-align: center;
+}
+.bottom-area .loading .icon-spinner.icon-spin.icon-large {
+  font-size: 34px;
+  color: #438bc9;
 }

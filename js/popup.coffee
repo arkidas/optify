@@ -26,11 +26,26 @@ $("#shorten-url").click (e) ->
   urlSource = $("#url-source").val()
   urlCampaign = $("#url-campaign").val()
   unless isValid(urlSource)
-    console.log "Source invalid!"
+    unless isValid(urlCampaign)
+      $('.url-source').addClass 'animated bounce'
+      $('.url-campaign').addClass 'animated bounce'
+      setTimeout (->
+        $('.url-source').removeClass 'animated bounce'
+        $('.url-campaign').removeClass 'animated bounce'
+      ), 1000
+    $('.url-source').addClass 'animated bounce'
+    setTimeout (->
+      $('.url-source').removeClass 'animated bounce'
+    ), 1000
     return false
-  else unless isValid(urlCampaign)
-    console.log "Campaign invalid!"
+
+  unless isValid(urlCampaign)
+    $('.url-campaign').addClass 'animated bounce'
+    setTimeout (->
+      $('.url-campaign').removeClass 'animated bounce'
+    ), 1000
     return false
+
   fullUrl = originalUrl + "/?optify_r=" + urlSource + "&optify_rd=" + urlCampaign
   fullUrl = fullUrl.replace(" ", "-")
 
@@ -49,8 +64,19 @@ $("#shorten-url").click (e) ->
   xmlhttp.onreadystatechange = ->
     if xmlhttp.readyState is 4 and xmlhttp.status is 200
       resp = JSON.parse(xmlhttp.responseText)
-      document.getElementById("short-url").innerHTML = "URL copied to clipboard!"
+      $('#short-url > input').val(resp.data.url)
       copyToClipboard resp.data.url
+      $('#shorten-url').hide()
+      $('.loading').show()
+      setTimeout (->
+        $('.url-info-input input').attr('disabled')
+        $('.loading').hide()
+        $('#shorten-url').hide()
+        $('#short-url').show()
+        $('#short-url').addClass 'animated fadeIn'
+      ), 1000
+
 
   xmlhttp.open "GET", bitly_json_req_url, true
   xmlhttp.send()
+  $('#short-url input').select()
